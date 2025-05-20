@@ -32,37 +32,39 @@
         <h1 class="text-primary text-center">Erzurum</h1>
         <p class="lead text-center">Erzurum, tarihî ve doğal güzellikleriyle öne çıkan bir şehir olup Palandöken Dağı, Çifte Minareli Medrese ve eşsiz lezzetleriyle ünlüdür.</p>
 
-        <div id="sehirSlider" class="carousel slide mt-4" data-bs-ride="carousel">
-    <div class="carousel-inner">
-        <div class="carousel-item active">
-            <a href="#cifte-minareli-medrese">
-                <img src="img/çmm.jpg" class="d-block mx-auto rounded" style="max-width: 600px; height: auto;" alt="Çifte Minareli Medrese">
-            </a>
+        <!-- SLIDER -->
+        <div id="sehirSlider" class="carousel slide mt-4" data-bs-ride="carousel" data-bs-interval="3000">
+            <div class="carousel-inner">
+                <div class="carousel-item active">
+                    <a href="#cifte-minareli-medrese">
+                        <img src="img/çmm.jpg" class="d-block mx-auto rounded" style="max-width: 600px;" alt="Çifte Minareli Medrese">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#palandoken">
+                        <img src="img/dag.jpg" class="d-block mx-auto rounded" style="max-width: 600px;" alt="Palandöken Dağı">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#tortum-selalesi">
+                        <img src="img/selale.webp" class="d-block mx-auto rounded" style="max-width: 600px;" alt="Tortum Şelalesi">
+                    </a>
+                </div>
+                <div class="carousel-item">
+                    <a href="#cag-kebabi">
+                        <img src="img/cağ.jpg" class="d-block mx-auto rounded" style="max-width: 600px;" alt="Cağ Kebabı">
+                    </a>
+                </div>
+            </div>
+            <button class="carousel-control-prev" type="button" data-bs-target="#sehirSlider" data-bs-slide="prev">
+                <span class="carousel-control-prev-icon"></span>
+            </button>
+            <button class="carousel-control-next" type="button" data-bs-target="#sehirSlider" data-bs-slide="next">
+                <span class="carousel-control-next-icon"></span>
+            </button>
         </div>
-        <div class="carousel-item">
-            <a href="#palandoken">
-                <img src="img/dag.jpg" class="d-block mx-auto rounded" style="max-width: 600px; height: auto;" alt="Palandöken Dağı">
-            </a>
-        </div>
-        <div class="carousel-item">
-            <a href="#tortum-selalesi">
-                <img src="img/selale.webp" class="d-block mx-auto rounded" style="max-width: 600px; height: auto;" alt="Tortum Şelalesi">
-            </a>
-        </div>
-        <div class="carousel-item">
-            <a href="#cag-kebabi">
-                <img src="img/cağ.jpg" class="d-block mx-auto rounded" style="max-width: 600px; height: auto;" alt="Cağ Kebabı">
-            </a>
-        </div>
-    </div>
-    <button class="carousel-control-prev" type="button" data-bs-target="#sehirSlider" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon"></span>
-    </button>
-    <button class="carousel-control-next" type="button" data-bs-target="#sehirSlider" data-bs-slide="next">
-        <span class="carousel-control-next-icon"></span>
-    </button>
-</div>
 
+        <!-- İÇERİKLER -->
         <section id="cifte-minareli-medrese" class="bg-white p-4 rounded shadow mt-5">
             <div class="row align-items-center">
                 <div class="col-md-6">
@@ -112,24 +114,33 @@
         </section>
 
         <section id="takimimiz" class="bg-white p-4 rounded shadow mt-4">
-    <div class="row align-items-center">
-        <div class="col-md-6">
-            <h2 class="text-danger">Erzurumspor FK</h2>
-            <p>Şehrimizin gururu Erzurumspor FK, Türkiye 1. Lig'de mücadele eden futbol takımımızdır. Daha fazla bilgi için aşağıdaki bağlantıya tıklayın.</p>
-            <a href="takimimiz.html" class="btn btn-primary mt-2">Takımımızı Keşfet</a>
-        </div>
-        <div class="col-md-6 text-center">
-            <img src="img/erzurumspor.jpg" class="img-fluid rounded" alt="Erzurumspor FK">
-        </div>
-      </div>
-         </section>
-
+            <div class="row align-items-center">
+                <div class="col-md-6">
+                    <h2 class="text-danger">Erzurumspor FK</h2>
+                    <p>Şehrimizin gururu Erzurumspor FK, Türkiye 1. Lig'de mücadele eden futbol takımımızdır. Daha fazla bilgi için aşağıdaki bağlantıya tıklayın.</p>
+                    <a href="takimimiz.html" class="btn btn-primary mt-2">Takımımızı Keşfet</a>
+                </div>
+                <div class="col-md-6 text-center">
+                    <img src="img/erzurumspor.jpg" class="img-fluid rounded" alt="Erzurumspor FK">
+                </div>
+            </div>
+        </section>
     </main>
 
     <footer class="text-center py-4">
         <p>&copy; 2025 - Tüm hakları saklıdır.</p>
     </footer>
 
+    <!-- Bootstrap ve slider başlatma -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const sehirSlider = document.querySelector("#sehirSlider");
+        new bootstrap.Carousel(sehirSlider, {
+          interval: 3000,
+          ride: 'carousel'
+        });
+      });
+    </script>
 </body>
 </html>
