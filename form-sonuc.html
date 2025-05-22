@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>Form Sonuçları</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+</head>
+<body class="bg-light">
+
+  <div class="container mt-5">
+    <h2 class="text-primary text-center">Form Gönderim Sonuçları</h2>
+    <div id="sonuclar" class="mt-4 bg-white p-4 rounded shadow"></div>
+    <div class="text-center mt-4">
+      <a href="iletisim.html" class="btn btn-secondary">Forma Geri Dön</a>
+    </div>
+  </div>
+
+  <script>
+    function getQueryParams() {
+      const params = {};
+      const queryString = window.location.search.substring(1);
+      const pairs = queryString.split("&");
+      for (let i = 0; i < pairs.length; i++) {
+        const pair = pairs[i].split("=");
+        const key = decodeURIComponent(pair[0]);
+        const value = decodeURIComponent(pair[1] || "");
+        if (params[key]) {
+          if (Array.isArray(params[key])) {
+            params[key].push(value);
+          } else {
+            params[key] = [params[key], value];
+          }
+        } else {
+          params[key] = value;
+        }
+      }
+      return params;
+    }
+
+    const params = getQueryParams();
+    const container = document.getElementById("sonuclar");
+
+    if (Object.keys(params).length === 0) {
+      container.innerHTML = `<p class="text-danger">Formdan herhangi bir veri alınamadı.</p>`;
+    } else {
+      let html = `<ul class="list-group">`;
+      for (let key in params) {
+        const label = key.charAt(0).toUpperCase() + key.slice(1);
+        const value = Array.isArray(params[key]) ? params[key].join(", ") : params[key];
+        html += `<li class="list-group-item"><strong>${label}:</strong> ${value}</li>`;
+      }
+      html += `</ul>`;
+      container.innerHTML = html;
+    }
+  </script>
+<footer class="text-center py-4">
+        <p>&copy; 2025 - Tüm hakları saklıdır.</p>
+        <p> Ömer Faruk ALADAĞ</p>
+    </footer>
+
+</body>
+
+</html>

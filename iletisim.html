@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+  <meta charset="UTF-8">
+  <title>İletişim</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link rel="stylesheet" href="style.css">
+  <script src="https://cdn.jsdelivr.net/npm/vue@2.6.14/dist/vue.js"></script>
+</head>
+<body class="bg-light">
+
+  <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+      <a class="navbar-brand" href="#">İletişim</a>
+      <div class="collapse navbar-collapse">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
+          <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
+          <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+          <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
+          <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <main class="container mt-5" id="app">
+    <h2 class="text-primary text-center mb-4">İletişim Formu</h2>
+    <form name="iletisimForm" action="form-sonuc.html" method="GET" @submit="validateForm">
+
+      <div class="mb-3">
+        <label>Ad Soyad</label>
+        <input type="text" name="ad" v-model="form.ad" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label>E-posta</label>
+        <input type="email" name="email" v-model="form.email" class="form-control">
+      </div>
+
+      <div class="mb-3">
+        <label>Telefon</label>
+        <input type="text" name="telefon" v-model="form.telefon" class="form-control">
+        
+      </div>
+
+      <div class="mb-3">
+        <label>Cinsiyet</label><br>
+        <input type="radio" value="Erkek" v-model="form.cinsiyet" name="cinsiyet"> Erkek
+        <input type="radio" value="Kadın" v-model="form.cinsiyet" name="cinsiyet"> Kadın
+      </div>
+
+      <div class="mb-3">
+        <label>İlgi Alanları</label><br>
+        <input type="checkbox" value="Futbol" v-model="form.ilgiler" name="ilgiler"> Futbol
+        <input type="checkbox" value="Müzik" v-model="form.ilgiler" name="ilgiler"> Müzik
+        <input type="checkbox" value="Yazılım" v-model="form.ilgiler" name="ilgiler"> Yazılım
+      </div>
+
+      <div class="mb-3">
+        <label>Mesaj</label>
+        <textarea name="mesaj" v-model="form.mesaj" class="form-control"></textarea>
+      </div>
+
+      <div class="d-flex justify-content-between">
+        <button type="submit" class="btn btn-success">Gönder </button>
+        <button type="button" class="btn btn-secondary" @click="temizleForm">Temizle</button>
+      </div>
+
+    </form>
+  </main>
+
+  <footer class="text-center py-4 mt-5">
+    <p>&copy; 2025 - Tüm hakları saklıdır.</p>
+    <p> Ömer Faruk ALADAĞ</p>
+  </footer>
+
+  <script>
+    new Vue({
+      el: "#app",
+      data: {
+        form: {
+          ad: "",
+          email: "",
+          telefon: "",
+          cinsiyet: "",
+          ilgiler: [],
+          mesaj: ""
+        }
+      },
+      methods: {
+        validateForm: function (e) {
+          const telRegex = /^[0-9]+$/;
+          const emailRegex = /^[^@]+@[^@]+\.[^@]+$/;
+
+          if (!this.form.ad || !this.form.email || !this.form.telefon || !this.form.cinsiyet || !this.form.mesaj) {
+            alert("Lütfen tüm zorunlu alanları doldurunuz.");
+            e.preventDefault();
+            return;
+          }
+
+          if (!emailRegex.test(this.form.email)) {
+            alert("Geçerli bir e-posta adresi giriniz.");
+            e.preventDefault();
+            return;
+          }
+
+          if (!telRegex.test(this.form.telefon)) {
+            alert("Telefon sadece rakam içermelidir.");
+            e.preventDefault();
+            return;
+          }
+          if (this.form.telefon.length !== 11) {
+             alert("Telefon numarası 11 haneli olmalıdır.");
+            e.preventDefault();
+            return;
+          }
+
+        },
+        temizleForm: function () {
+          this.form = {
+            ad: "",
+            email: "",
+            telefon: "",
+            cinsiyet: "",
+            ilgiler: [],
+            mesaj: ""
+          };
+        }
+      }
+    });
+  </script>
+</body>
+</html>
