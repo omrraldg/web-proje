@@ -9,37 +9,37 @@
 </head>
 <body class="bg-light">
 
-  <header>
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
-      <div class="container">
-        <a class="navbar-brand" href="#">Şehir Tanıtım Sitesi</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-          <ul class="navbar-nav me-auto">
-            <li class="nav-item"><a class="nav-link active" href="index.html">Hakkımda</a></li>
-            <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
-            <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
-            <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
-            <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
-            <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
-          </ul>
-          <ul class="navbar-nav ms-auto align-items-center">
-            <li class="nav-item">
-              <span id="usernameDisplay" class="nav-link text-white fw-bold"></span>
-            </li>
-            <li class="nav-item" id="loginBtn">
-              <a href="login.html" class="btn btn-success btn-sm">Giriş Yap</a>
-            </li>
-            <li class="nav-item" id="logoutBtn" style="display: none;">
-              <button onclick="logout()" class="btn btn-danger btn-sm">Çıkış Yap</button>
-            </li>
-          </ul>
+<header>
+  <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
+        <div class="container">
+          <a class="navbar-brand" href="#">Şehir Tanıtım Sitesi</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+              <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
+              <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+              <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
+              <li class="nav-item"><a class="nav-link" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+              <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+            </ul>
+            <ul class="navbar-nav ms-auto align-items-center">
+              <li class="nav-item">
+                <span id="usernameDisplay" class="nav-link text-white fw-bold"></span>
+              </li>
+              <li class="nav-item" id="loginBtn">
+                <a href="login.html" class="btn btn-success btn-sm">Giriş Yap</a>
+              </li>
+              <li class="nav-item" id="logoutBtn" style="display: none;">
+                <button onclick="logout()" class="btn btn-danger btn-sm">Çıkış Yap</button>
+              </li>
+            </ul>
+          </div>
         </div>
-      </div>
-    </nav>
-  </header>
+      </nav>
+</header>
 
   <main class="container mt-5">
     <section class="text-center my-5">
@@ -94,28 +94,7 @@
       <p> Ömer Faruk ALADAĞ</p>
   </footer>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-  <script>
-    // Giriş/çıkış kontrolü
-    const username = localStorage.getItem("username");
-    const usernameDisplay = document.getElementById("usernameDisplay");
-    const loginBtn = document.getElementById("loginBtn");
-    const logoutBtn = document.getElementById("logoutBtn");
-
-    if (username) {
-      usernameDisplay.textContent = "👤 " + username;
-      loginBtn.style.display = "none";
-      logoutBtn.style.display = "inline-block";
-    } else {
-      usernameDisplay.textContent = "";
-      loginBtn.style.display = "inline-block";
-      logoutBtn.style.display = "none";
-    }
-
-    function logout() {
-      localStorage.removeItem("username");
-      location.reload();
-    }
-  </script>
+   <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+  <script src="loginkontrol.js"></script>
 </body>
 </html>

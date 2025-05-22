@@ -1,7 +1,7 @@
 document.addEventListener("DOMContentLoaded", function () {
     let carouselElement = document.querySelector("#sehrimSlider");
     let carousel = new bootstrap.Carousel(carouselElement, {
-        interval: 3000, // 3 saniyede bir geçiş
+        interval: 2000, // 2 saniyede bir geçiş
         ride: "carousel"
     });
 });

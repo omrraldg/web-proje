@@ -6,127 +6,149 @@
     <title>İlgi Alanlarım</title>
     <link rel="stylesheet" href="style.css">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <style>
+      body {
+        padding-top: 80px;
+      }
+    </style>
 </head>
 <body class="bg-light">
-    <!-- NAVBAR -->
-    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <header>
+      <nav class="navbar navbar-expand-lg navbar-dark custom-navbar fixed-top">
         <div class="container">
-            <a class="navbar-brand" href="#">İlgi Alanlarım</a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Ana Sayfa</a></li>
-                    <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
-                    <li class="nav-item"><a class="nav-link" href="sehrim.html">Erzurum</a></li>
-                    <li class="nav-item"><a class="nav-link active" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
-                    <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
-                </ul>
-            </div>
+          <a class="navbar-brand" href="#">Şehir Tanıtım Sitesi</a>
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto">
+              <li class="nav-item"><a class="nav-link" href="index.html">Hakkımda</a></li>
+              <li class="nav-item"><a class="nav-link" href="cv.html">Özgeçmiş</a></li>
+              <li class="nav-item"><a class="nav-link" href="sehrim.html">Şehrim</a></li>
+              <li class="nav-item"><a class="nav-link" href="takimimiz.html">Takımımız</a></li>
+              <li class="nav-item"><a class="nav-link active" href="ilgi-alanlarim.html">İlgi Alanlarım</a></li>
+              <li class="nav-item"><a class="nav-link" href="iletisim.html">İletişim</a></li>
+            </ul>
+            <ul class="navbar-nav ms-auto align-items-center">
+              <li class="nav-item">
+                <span id="usernameDisplay" class="nav-link text-white fw-bold"></span>
+              </li>
+              <li class="nav-item" id="loginBtn">
+                <a href="login.html" class="btn btn-success btn-sm">Giriş Yap</a>
+              </li>
+              <li class="nav-item" id="logoutBtn" style="display: none;">
+                <button onclick="logout()" class="btn btn-danger btn-sm">Çıkış Yap</button>
+              </li>
+            </ul>
+          </div>
         </div>
-    </nav>
+      </nav>
+    </header>
 
-    <!-- BAŞLIK -->
-    <div class="container text-center mt-5">
+    <main class="container mt-5">
+      <div class="text-center">
         <h1 class="text-primary">İlgi Alanlarım</h1>
         <p class="lead">İlgilendiğim konular ve favori aktivitelerim hakkında bilgiler:</p>
-    </div>
+      </div>
 
-    <!-- MEVCUT KARTLAR -->
-    <div class="container mt-5">
-        <!-- İlk satır -->
-        <div class="row">
-            <div class="col-md-6 text-center">
-                <img src="img/fenerbahce.jpg" class="img-fluid rounded" alt="Fenerbahçe">
-                <h3 class="mt-3">Futbol - Fenerbahçe</h3>
-                <p>Fenerbahçeliyim. Benim için bir takımdan fazlasıdır Fenerbahçe. Herhangi bir branşta varsa gerisi önemli değildir. Ne kupa ne şampiyonluk, Fenerbahçe büyüklüğü bambaşkadır. Tüm maçlarını izlerim ve de hep izleyeceğim. En büyük FENERBAHÇE!</p>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="img/rockets.jpg" class="img-fluid rounded" alt="Houston Rockets">
-                <h3 class="mt-3">Basketbol - Fenerbahçe &amp; Houston Rockets</h3>
-                <p>Basketbolda hem Fenerbahçe Beko hem de Houston Rockets favori takımlarımdan. Fenerbahçeyi zaten üst kısımda anlattım. Houston ise NBA'de izleyip takip ettiğim takımlardan birisi. Milli oyuncumuz Alperen Şengün de orada oynuyor ve bu sezon MVP seçildi.</p>
-            </div>
+      <!-- Mevcut Kartlar -->
+      <div class="row mt-5">
+        <div class="col-md-6 text-center">
+          <img src="img/fenerbahce.jpg" class="img-fluid rounded" alt="Fenerbahçe">
+          <h3 class="mt-3">Futbol - Fenerbahçe</h3>
+          <p>Fenerbahçeliyim. Benim için bir takımdan fazlasıdır Fenerbahçe. Herhangi bir branşta varsa gerisi önemli değildir. Ne kupa ne şampiyonluk, Fenerbahçe büyüklüğü bambaşkadır. Tüm maçlarını izlerim ve de hep izleyeceğim. En büyük FENERBAHÇE!</p>
         </div>
-
-        <!-- İkinci satır -->
-        <div class="row mt-4">
-            <div class="col-md-6 text-center">
-                <img src="img/mercedes.jpg" class="img-fluid rounded" alt="Mercedes F1">
-                <h3 class="mt-3">Formula 1 - Mercedes</h3>
-                <p>Formula 1’de Mercedes AMG Petronas benim favori takımım. Lewis Hamilton'u özellikle severim. Ayrıca Mercedes araçlara özel bir ilgim de bulunmakta.</p>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="img/cağ.jpg" class="img-fluid rounded" alt="Cağ Kebabı">
-                <h3 class="mt-3">Sevdiğim Yemek - Cağ Kebabı</h3>
-                <p>Şehrim sayfasında anlattığım Cağ Kebabı en sevdiğim yemeklerden biridir. Onu yiyerek büyüdüm. Günün şartlarında pahalı olsa da herkesin yemesini özellikle tavsiye ederim.</p>
-            </div>
+        <div class="col-md-6 text-center">
+          <img src="img/rockets.jpg" class="img-fluid rounded" alt="Houston Rockets">
+          <h3 class="mt-3">Basketbol - Fenerbahçe &amp; Houston Rockets</h3>
+          <p>Basketbolda hem Fenerbahçe Beko hem de Houston Rockets favori takımlarımdan. Fenerbahçeyi zaten üst kısımda anlattım. Houston ise NBA'de izleyip takip ettiğim takımlardan birisi. Milli oyuncumuz Alperen Şengün de orada oynuyor ve bu sezon MVP seçildi.</p>
         </div>
-
-        <!-- Üçüncü satır -->
-        <div class="row mt-4">
-            <div class="col-md-6 text-center">
-                <img src="img/gaming.jpg" class="img-fluid rounded" alt="Bilgisayar Oyunları">
-                <h3 class="mt-3">Bilgisayar Oyunları</h3>
-                <p>Oyun oynamayı çok severim. Özellikle League of Legends, Assassin's Creed, PES ve GTA gibi oyunları severek oynuyorum. Strateji, hikâye bazlı oyunlar ve rekabetçi oyunlar benim için vazgeçilmez. Arkadaşlarla yapılması gereken bir aktivite olduğunu düşünüyorum. İleride çok oynanan ve çok güzel bir hikayeye sahip oyun yapmak istiyorum.</p>
-            </div>
-            <div class="col-md-6 text-center">
-                <img src="img/coding.jpg" class="img-fluid rounded" alt="Kodlama">
-                <h3 class="mt-3">Kodlama - Bildiğim Diller</h3>
-                <p>Şu ana kadar öğrendiğim programlama dilleri arasında <strong>Java, JavaScript, HTML, CSS, PHP, C, C++</strong> bulunuyor. Küçüklüğümden beri bilgisayarla haşır neşir olmuş birisi olarak Bilgisayar Mühendisliği bölümünde okuyorum. Bazı dilleri önceden öğrenmiş olsam da okulumla beraber kendimi geliştirmekteyim.</p>
-            </div>
+        <div class="col-md-6 text-center mt-4">
+          <img src="img/mercedes.jpg" class="img-fluid rounded" alt="Mercedes F1">
+          <h3 class="mt-3">Formula 1 - Mercedes</h3>
+          <p>Formula 1’de Mercedes AMG Petronas benim favori takımım. Lewis Hamilton'u özellikle severim. Ayrıca Mercedes araçlara özel bir ilgim de bulunmakta.</p>
         </div>
-    </div>
+        <div class="col-md-6 text-center mt-4">
+          <img src="img/cağ.jpg" class="img-fluid rounded" alt="Cağ Kebabı">
+          <h3 class="mt-3">Sevdiğim Yemek - Cağ Kebabı</h3>
+          <p>Şehrim sayfasında anlattığım Cağ Kebabı en sevdiğim yemeklerden biridir. Onu yiyerek büydüm. Günün şartlarında pahalı olsa da herkesin yemesini özellikle tavsiye ederim.</p>
+        </div>
+        <div class="col-md-6 text-center mt-4">
+          <img src="img/gaming.jpg" class="img-fluid rounded" alt="Bilgisayar Oyunları">
+          <h3 class="mt-3">Bilgisayar Oyunları</h3>
+          <p>Oyun oynamayı çok severim. Özellikle League of Legends, Assassin's Creed, PES ve GTA gibi oyunları severek oynuyorum. Strateji, hikâye bazlı oyunlar ve rekabetçi oyunlar benim için vazgeçilmez. Arkadaşlarla yapılması gereken bir aktivite olduğunu düşünüyorum. İleride çok oynanan ve çok güzel bir hikayeye sahip oyun yapmak istiyorum.</p>
+        </div>
+        <div class="col-md-6 text-center mt-4">
+          <img src="img/coding.jpg" class="img-fluid rounded" alt="Kodlama">
+          <h3 class="mt-3">Kodlama - Bildiğim Diller</h3>
+          <p>Şu ana kadar öğrendiğim programlama dilleri arasında <strong>Java, JavaScript, HTML, CSS, PHP, C, C++</strong> bulunuyor. Küçüklüğümden beri bilgisayarla haşır neşir olmuş birisi olarak Bilgisayar Mühendisliği bölümünde okuyorum. Bazı dilleri önceden öğrenmiş olsam da okulumla beraber kendimi geliştirmekteyim.</p>
+        </div>
+      </div>
 
-    <!-- oyun bölümü -->
-    <div class="container mt-5">
-        <h2 class="text-primary text-center">Önerilen Ücretsiz Oyunlar</h2>
+      <!-- oyun bölümü -->
+      <div class="mt-5">
+        <h2 class="text-primary text-center">Önerilen Üretsiz Oyunlar</h2>
         <p class="text-center text-muted mb-4">Veriler <a href="https://www.freetogame.com/api-doc" target="_blank" rel="noopener">FreeToGame&nbsp;API</a>’den alınmaktadır.</p>
-        <div id="gamesRow" class="row g-4 justify-content-center">
-            <!-- JavaScript buraya kartları ekleyecek -->
-        </div>
-    </div>
+        <div id="gamesRow" class="row g-4 justify-content-center"></div>
+      </div>
+    </main>
 
-    <!-- bootstrap JS -->
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-    <!-- OYUN API’si -->
-    <script>
-        /** FreeToGame API’den oyunları burada çekiyor **/
-        fetch('proxy.php')
-            .then(response => response.json())
-            .then(games => {
-                const topGames = games.slice(0, 4);   
-                const row = document.getElementById('gamesRow');
-
-                topGames.forEach(game => {
-                    const col = document.createElement('div');
-                    col.className = 'col-sm-6 col-lg-3';
-
-                    col.innerHTML = `
-                        <div class="card h-100 shadow-sm">
-                            <img src="${game.thumbnail}" class="card-img-top" alt="${game.title}">
-                            <div class="card-body d-flex flex-column">
-                                <h5 class="card-title">${game.title}</h5>
-                                <p class="card-text small text-muted mb-4">${game.short_description.slice(0, 80)}...</p>
-                                <a href="${game.game_url}" target="_blank" rel="noopener" class="btn btn-primary mt-auto">Siteye Git</a>
-                            </div>
-                        </div>
-                    `;
-                    row.appendChild(col);
-                });
-            })
-            .catch(err => {
-                console.error('Oyunlar alınırken hata oluştu:', err);
-                document.getElementById('gamesRow').innerHTML =
-                    '<p class="text-danger text-center">Oyun verileri yüklenemedi.</p>';
-            });
-    </script>
-</body>
-
-<footer class="text-center py-4">
-        <p>&copy; 2025 - Tüm hakları saklıdır.</p>
-        <p> Ömer Faruk ALADAĞ</p>
+    <footer class="text-center py-4 mt-5">
+      <p>&copy; 2025 - Tüm hakları saklıdır.</p>
+      <p>Ömer Faruk ALADAĞ</p>
     </footer>
 
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+      const username = localStorage.getItem("username");
+      const usernameDisplay = document.getElementById("usernameDisplay");
+      const loginBtn = document.getElementById("loginBtn");
+      const logoutBtn = document.getElementById("logoutBtn");
+
+      if (username) {
+        usernameDisplay.textContent = "👤 " + username;
+        loginBtn.style.display = "none";
+        logoutBtn.style.display = "inline-block";
+      } else {
+        usernameDisplay.textContent = "";
+        loginBtn.style.display = "inline-block";
+        logoutBtn.style.display = "none";
+      }
+
+      function logout() {
+        localStorage.removeItem("username");
+        location.reload();
+      }
+
+      fetch('proxy.php')
+        .then(res => res.json())
+        .then(data => {
+          const topGames = data.slice(0, 4);
+          const row = document.getElementById("gamesRow");
+
+          topGames.forEach(game => {
+            const col = document.createElement("div");
+            col.className = "col-sm-6 col-lg-3";
+            col.innerHTML = `
+              <div class="card h-100 shadow-sm">
+                <img src="${game.thumbnail}" class="card-img-top" alt="${game.title}">
+                <div class="card-body d-flex flex-column">
+                  <h5 class="card-title">${game.title}</h5>
+                  <p class="card-text small text-muted mb-4">${game.short_description.slice(0, 80)}...</p>
+                  <a href="${game.game_url}" target="_blank" class="btn btn-primary mt-auto">Siteye Git</a>
+                </div>
+              </div>
+            `;
+            row.appendChild(col);
+          });
+        })
+        .catch(() => {
+          document.getElementById("gamesRow").innerHTML = '<p class="text-danger text-center">Oyun verileri yüklenemedi.</p>';
+        });
+    </script>
+    
+  <script src="loginkontrol.js"></script>
+  
+</body>
 </html>
